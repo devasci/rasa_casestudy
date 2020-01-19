@@ -100,6 +100,24 @@
 - search for [american](cuisine) restaurants in [banglore](location:Bengaluru) and send the result to [devendra.satram@gmail.com](to_email_id)
 - search hotels
 - [south indian](cuisine) in [chennai](location)
+- how many hotels in [India](location:india)
+- best hotel in [bangalore](location:Bengaluru)
+- multi cuisine restaurant in Andhra Pradesh
+- [Tirupati](location:tirupati)
+- hotels
+- All restaurants in [Bangalore](location:Bengaluru)
+- [cheapest](price_range:lessthan_300) restaurants in [chennai](location)
+- [Italian](cuisine:italian)
+- [Yes](change_price_range)
+- [No](change_price_range)
+- restaurant to have tasty [italian](cuisine) and cjonese food
+- [kerala](location)
+- [visakhapatnam](location)
+- restaurants to have tasty [italian](cuisine) and [chinese](cuisine) food
+- [pannuruteja@gmail.com](to_email_id)
+- Restaurant with different varieties of food [before 300 Rupees](price_range:lessthan_300)
+- [delhi](location)
+- [Italian](cuisine:italian)
 
 ## intent:sendemail
 - get me results on email [devendra.satram@gmail.com](to_email_id)
@@ -110,11 +128,10 @@
 - [Yes](is_email_requested)
 - [devendra.satram@gmail.com](to_email_id)
 - [foodie.restaurants.bot@gmail.com](to_email_id)
-- [morethan_700](price_range)
-- [lessthan_300](price_range)
-- [between_300_to_700](price_range)
-- [morethan_700](price_range)
-- [devendra.satram@gmail.com](to_email_id)
+- [pannuruteja@gmail.com](to_email_id)
+
+## intent:out_of_context
+- first best park in [delhi](location)
 
 ## synonym:4
 - four
@@ -122,6 +139,7 @@
 ## synonym:Bengaluru
 - banglore
 - bangalore
+- Bangalore
 - bangulore
 - banguluru
 - bangulur
@@ -150,8 +168,15 @@
 - Chinese
 - Chines
 
+## synonym:india
+- India
+
+## synonym:italian
+- Italian
+
 ## synonym:lessthan_300
 - Lesser than 300
+- cheapest
 
 ## synonym:mexican
 - Mexican
@@ -161,6 +186,9 @@
 
 ## synonym:south indian
 - South Indian
+
+## synonym:tirupati
+- Tirupati
 
 ## synonym:vegetarian
 - veggie

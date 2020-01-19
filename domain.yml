@@ -16,6 +16,7 @@ actions:
 - utter_no_results_in_pricerange
 - utter_not_greeted_u_greet_sure
 - utter_not_operating_city
+- utter_outofcontext
 entities:
 - change_price_range
 - cuisine
@@ -25,11 +26,12 @@ entities:
 - price_range
 - to_email_id
 intents:
-- greet
 - restaurant_search
 - sendemail
 - affirm
 - goodbye
+- out_of_context
+- greet
 - stop
 session_config:
   carry_over_slots_to_new_session: true
@@ -111,3 +113,5 @@ templates:
   - text: Hi there, welcome.  looking for restaurants in {location}
   utter_not_operating_city:
   - text: Sorry, we are not operating in {location} yet
+  utter_outofcontext:
+  - text: Please ask me restaurant search queries only.
