@@ -95,6 +95,6 @@ templates:
       payload: '/sendemail{"is_email_requested": "yes"}'
     - title: "No"
       payload: '/sendemail{"is_email_requested": "No"}'
-  text: 'Do you want these restaurants details on email?'
+    text: 'Do you want these restaurants details on email?'
   utter_ask_emailid:
   - text: 'Enter your e-mail id:'
