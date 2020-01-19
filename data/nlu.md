@@ -88,9 +88,8 @@
 - [morethan_700](price_range)
 - [lessthan_300](price_range)
 - [banglore](location:Bengaluru)
-- [banglore](location:Bengaluru)
+- near [agra](location)
 - [Chinese](cuisine:chinese)
-- [lessthan_300](price_range)
 
 ## intent:sendemail
 - get me results on email [devendra.satram@gmail.com](to_email_id)
@@ -101,6 +100,8 @@
 - [Yes](is_email_requested)
 - [devendra.satram@gmail.com](to_email_id)
 - [foodie.restaurants.bot@gmail.com](to_email_id)
+- [morethan_700](price_range)
+- [devendra.satram@gmail.com](to_email_id)
 
 ## synonym:4
 - four
@@ -119,10 +120,25 @@
 ## synonym:Delhi
 - New Delhi
 
+## synonym:No
+- Nope
+
+## synonym:Yes
+- send via email
+
+## synonym:between_300_to_700
+- Rs. 300 to 700
+
 ## synonym:chinese
 - chines
 - Chinese
 - Chines
+
+## synonym:lessthan_300
+- Lesser than 300
+
+## synonym:morethan_700
+- More than 700
 
 ## synonym:south indian
 - South Indian
@@ -138,4 +154,4 @@
 - [0-9]{6}
 
 ## lookup:location
-data/tire_1_2_cities_list.txt
+  data/tire_1_2_cities_list.txt

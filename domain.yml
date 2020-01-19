@@ -1,13 +1,13 @@
 actions:
 - action_check_city
-- utter_ask_emailid
-- utter_ask_restults_on_email
-- action_send_email
 - action_search_restaurants
+- action_send_email
 - utter_ask_cuisine
+- utter_ask_emailid
 - utter_ask_howcanhelp
 - utter_ask_location
 - utter_ask_pricerange
+- utter_ask_restults_on_email
 - utter_debug_ok
 - utter_default
 - utter_goodbye
@@ -15,16 +15,16 @@ actions:
 - utter_not_operating_city
 entities:
 - cuisine
+- is_email_requested
 - location
 - people
 - price_range
 - to_email_id
-- is_email_requested
 intents:
 - restaurant_search
 - sendemail
-- affirm
 - greet
+- affirm
 - goodbye
 - stop
 session_config:
@@ -33,20 +33,16 @@ session_config:
 slots:
   cuisine:
     type: text
-    auto_fill: True
-  is_operated_in_city:
-    type: bool
   is_email_requested:
+    type: bool
+  is_operated_in_city:
     type: bool
   location:
     type: text
-    auto_fill: True
   price_range:
     type: text
-    auto_fill: True
   to_email_id:
     type: text
-    auto_fill: True
 templates:
   utter_ask_cuisine:
   - buttons:
@@ -63,6 +59,8 @@ templates:
     - payload: North Indian
       title: North Indian
     text: What kind of cuisine would you prefer?
+  utter_ask_emailid:
+  - text: 'Enter your e-mail id:'
   utter_ask_howcanhelp:
   - text: how can I help you?
   utter_ask_location:
@@ -76,6 +74,13 @@ templates:
     - payload: morethan_700
       title: More than 700
     text: What price range are you looking at?
+  utter_ask_restults_on_email:
+  - buttons:
+    - payload: '/sendemail{"is_email_requested": "yes"}'
+      title: Yes
+    - payload: '/sendemail{"is_email_requested": "No"}'
+      title: No
+    text: Do you want these restaurants details on email?
   utter_debug_ok:
   - text: OK
   utter_default:
@@ -89,12 +94,3 @@ templates:
   - text: Hey, How is it going. How May I help you Today
   utter_not_operating_city:
   - text: Sorry, we are not operating in {location} yet.
-  utter_ask_restults_on_email:
-  - buttons:
-    - title: "Yes"
-      payload: '/sendemail{"is_email_requested": "yes"}'
-    - title: "No"
-      payload: '/sendemail{"is_email_requested": "No"}'
-    text: 'Do you want these restaurants details on email?'
-  utter_ask_emailid:
-  - text: 'Enter your e-mail id:'
