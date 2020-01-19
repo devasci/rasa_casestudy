@@ -89,7 +89,12 @@
 - [lessthan_300](price_range)
 - [banglore](location:Bengaluru)
 - near [agra](location)
-- [Chinese](cuisine:chinese)
+- find restaurants
+- [chennai](location)
+- [Mexican](cuisine:mexican)
+- find restaurants in [chennai](location)
+- [American](cuisine:american)
+- [tirupati](location)
 
 ## intent:sendemail
 - get me results on email [devendra.satram@gmail.com](to_email_id)
@@ -101,7 +106,6 @@
 - [devendra.satram@gmail.com](to_email_id)
 - [foodie.restaurants.bot@gmail.com](to_email_id)
 - [morethan_700](price_range)
-- [devendra.satram@gmail.com](to_email_id)
 
 ## synonym:4
 - four
@@ -126,6 +130,9 @@
 ## synonym:Yes
 - send via email
 
+## synonym:american
+- American
+
 ## synonym:between_300_to_700
 - Rs. 300 to 700
 
@@ -136,6 +143,9 @@
 
 ## synonym:lessthan_300
 - Lesser than 300
+
+## synonym:mexican
+- Mexican
 
 ## synonym:morethan_700
 - More than 700

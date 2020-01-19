@@ -8,6 +8,7 @@ import zomatopy
 import json
 import smtplib, ssl
 
+email_body_data = ''
 
 class ActionSearchRestaurants(Action):
     cuisines_codes = {25: 'Chinese',
@@ -28,19 +29,29 @@ class ActionSearchRestaurants(Action):
             price_range_id = 'lessthan_300'
 
         minPrice, maxPrice = self.price_ranges[price_range_id]
-        result_text_format = '{0} in {1} has been rated {2}'
+        result_text_format = '{0} in "{1}" has been rated {2}'
         final_results = []
-
+        results_for_email = []
+        cntr = 0
+        global email_body_data
+        email_body_data = ''
         for e in restaurant_details['restaurants']:
             cost_for_two = int(e['restaurant']['average_cost_for_two'])
 
             if cost_for_two >= minPrice and cost_for_two <= maxPrice:
+                cntr += 1
                 final_results.append(
                         result_text_format.format(e['restaurant']['name'],
                                                   e['restaurant']['location']['address'],
                                                   e['restaurant']['user_rating']['aggregate_rating']
                                                 #   e['restaurant']['user_rating']['rating_text'],
                                                 ))
+                email_body = str(cntr)+'.  '+e['restaurant']['name']+'\n'
+                email_body += 'Address: '+e['restaurant']['location']['address']+'\n'
+                email_body += 'Average buget for two people: Rs. '+str(e['restaurant']['average_cost_for_two'])+'\n'
+                email_body += 'Zomato user rating: '+e['restaurant']['user_rating']['aggregate_rating']+' ('+e['restaurant']['user_rating']['rating_text']+')'+'\n\n'
+                email_body_data += email_body
+
                 if len(final_results) >= 10:
                     break
         return final_results
@@ -121,14 +132,14 @@ class ActionSendMail(Action):
     def run(self, dispatcher, tracker, domain):
         to_email_id = tracker.get_slot('to_email_id')
 
-        message = 'dummy message for testing...'
-
         context = ssl.create_default_context()
         with smtplib.SMTP(self.smtp_server, self.port) as server:
             server.ehlo()  # Can be omitted
             server.starttls(context=context)
             server.ehlo()  # Can be omitted
             server.login(self.sender_email, self.password)
-            server.sendmail(self.sender_email, to_email_id, message)
+            global email_body_data
+            subject = 'Subject: Foodie: your restaurant search results\n'
+            server.sendmail(self.sender_email, to_email_id, subject+email_body_data)
         
         return

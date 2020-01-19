@@ -12,6 +12,7 @@ actions:
 - utter_default
 - utter_goodbye
 - utter_greet
+- utter_not_greeted_u_greet_sure
 - utter_not_operating_city
 entities:
 - cuisine
@@ -22,8 +23,8 @@ entities:
 - to_email_id
 intents:
 - restaurant_search
-- sendemail
 - greet
+- sendemail
 - affirm
 - goodbye
 - stop
@@ -92,5 +93,7 @@ templates:
   - text: hey there! How may i help you
   - text: Hi, How can I help you!
   - text: Hey, How is it going. How May I help you Today
+  utter_not_greeted_u_greet_sure:
+  - text: Hello there, Sure...
   utter_not_operating_city:
   - text: Sorry, we are not operating in {location} yet.
