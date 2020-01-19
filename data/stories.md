@@ -30,8 +30,8 @@
     - action_search_restaurants
     - slot{"location": "agra"}
     - utter_ask_restults_on_email
-* sendemail{"is_email_requested": "yes"}
-    - slot{"is_email_requested": "yes"}
+* sendemail{"is_email_requested": "Yes"}
+    - slot{"is_email_requested": "Yes"}
     - utter_ask_emailid
 * sendemail{"to_email_id": "devendra.satram@gmail.com"}
     - slot{"to_email_id": "devendra.satram@gmail.com"}
@@ -55,8 +55,8 @@
     - slot{"price_range": "morethan_700"}
     - action_search_restaurants
     - utter_ask_restults_on_email
-* sendemail{"is_email_requested": "yes"}
-    - slot{"is_email_requested": "yes"}
+* sendemail{"is_email_requested": "Yes"}
+    - slot{"is_email_requested": "Yes"}
     - utter_ask_emailid
 * sendemail{"to_email_id": "devendra.satram@gmail.com"}
     - slot{"to_email_id": "devendra.satram@gmail.com"}
@@ -78,8 +78,8 @@
     - action_search_restaurants
     - slot{"location": "chennai"}
     - utter_ask_restults_on_email
-* sendemail{"is_email_requested": "yes"}
-    - slot{"is_email_requested": "yes"}
+* sendemail{"is_email_requested": "Yes"}
+    - slot{"is_email_requested": "Yes"}
     - utter_ask_emailid
 * sendemail{"to_email_id": "devendra.satram@gmail.com"}
     - slot{"to_email_id": "devendra.satram@gmail.com"}
@@ -96,4 +96,65 @@
     - action_check_city
     - slot{"is_operated_in_city": false}
     - utter_not_operating_city
+    - utter_goodbye
+
+## interactive_story_1
+* restaurant_search{"cuisine": "mexican", "location": "Bengaluru", "to_email_id": "devendra.satram@gmail.com"}
+    - slot{"cuisine": "mexican"}
+    - slot{"location": "Bengaluru"}
+    - slot{"to_email_id": "devendra.satram@gmail.com"}
+    - utter_not_greeted_u_greet_sure
+    - action_check_city
+    - slot{"is_operated_in_city": false}
+    - utter_not_operating_city
+    - utter_goodbye
+
+## interactive_story_1
+* restaurant_search{"cuisine": "american", "location": "Bengaluru", "to_email_id": "devendra.satram@gmail.com"}
+    - slot{"cuisine": "american"}
+    - slot{"location": "Bengaluru"}
+    - slot{"to_email_id": "devendra.satram@gmail.com"}
+    - utter_not_greeted_u_greet_sure
+    - action_check_city
+    - slot{"is_operated_in_city": true}
+    - utter_ask_pricerange
+* sendemail{"price_range": "morethan_700"}
+    - slot{"price_range": "morethan_700"}
+    - action_search_restaurants
+    - slot{"location": "Bengaluru"}
+    - action_send_email
+    - utter_goodbye
+
+## interactive_story_1
+* greet
+    - utter_greet
+* restaurant_search
+    - utter_ask_location
+* restaurant_search{"cuisine": "south indian", "location": "chennai"}
+    - slot{"cuisine": "south indian"}
+    - slot{"location": "chennai"}
+    - action_check_city
+    - slot{"is_operated_in_city": true}
+    - utter_ask_pricerange
+* sendemail{"price_range": "lessthan_300"}
+    - slot{"price_range": "lessthan_300"}
+    - action_search_restaurants
+    - slot{"change_price_range": "Yes"}
+    - utter_ask_pricerange
+* sendemail{"price_range": "between_300_to_700"}
+    - slot{"price_range": "between_300_to_700"}
+    - action_search_restaurants
+    - slot{"change_price_range": "Yes"}
+    - utter_ask_pricerange
+* sendemail{"price_range": "morethan_700"}
+    - slot{"price_range": "morethan_700"}
+    - action_search_restaurants
+    - slot{"change_price_range": "No"}
+    - utter_ask_restults_on_email
+* sendemail{"is_email_requested": "Yes"}
+    - slot{"is_email_requested": "Yes"}
+    - utter_ask_emailid
+* sendemail{"to_email_id": "devendra.satram@gmail.com"}
+    - slot{"to_email_id": "devendra.satram@gmail.com"}
+    - action_send_email
     - utter_goodbye

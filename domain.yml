@@ -2,6 +2,7 @@ actions:
 - action_check_city
 - action_search_restaurants
 - action_send_email
+- utter_ask_change_pricerange
 - utter_ask_cuisine
 - utter_ask_emailid
 - utter_ask_howcanhelp
@@ -12,9 +13,11 @@ actions:
 - utter_default
 - utter_goodbye
 - utter_greet
+- utter_no_results_in_pricerange
 - utter_not_greeted_u_greet_sure
 - utter_not_operating_city
 entities:
+- change_price_range
 - cuisine
 - is_email_requested
 - location
@@ -22,8 +25,8 @@ entities:
 - price_range
 - to_email_id
 intents:
-- restaurant_search
 - greet
+- restaurant_search
 - sendemail
 - affirm
 - goodbye
@@ -32,6 +35,8 @@ session_config:
   carry_over_slots_to_new_session: true
   session_expiration_time: 0
 slots:
+  change_price_range:
+    type: text
   cuisine:
     type: text
   is_email_requested:
@@ -45,6 +50,13 @@ slots:
   to_email_id:
     type: text
 templates:
+  utter_ask_change_pricerange:
+  - buttons:
+    - payload: '/restaurant_search{"change_price_range": "Yes"}'
+      title: Yes
+    - payload: '/restaurant_search{"change_price_range": "No"}'
+      title: No
+    text: do you like to look for restaurants in other price ranges?
   utter_ask_cuisine:
   - buttons:
     - payload: Chinese
@@ -77,7 +89,7 @@ templates:
     text: What price range are you looking at?
   utter_ask_restults_on_email:
   - buttons:
-    - payload: '/sendemail{"is_email_requested": "yes"}'
+    - payload: '/sendemail{"is_email_requested": "Yes"}'
       title: Yes
     - payload: '/sendemail{"is_email_requested": "No"}'
       title: No
@@ -93,7 +105,9 @@ templates:
   - text: hey there! How may i help you
   - text: Hi, How can I help you!
   - text: Hey, How is it going. How May I help you Today
+  utter_no_results_in_pricerange:
+  - text: There are not restaurants available in the chosen price range
   utter_not_greeted_u_greet_sure:
-  - text: Hello there, Sure...
+  - text: Hi there, welcome.  looking for restaurants in {location}
   utter_not_operating_city:
-  - text: Sorry, we are not operating in {location} yet.
+  - text: Sorry, we are not operating in {location} yet

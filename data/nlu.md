@@ -48,10 +48,11 @@
 - show me [chines](cuisine:chinese) restaurants in the [New Delhi](location:Delhi)
 - show me a [mexican](cuisine) place in the [centre](location)
 - i am looking for an [indian](cuisine) spot called olaolaolaolaolaola
-- search for restaurants
+- search for restaurants and email to [devendra.satram@gmail.com](to_email_id)
 - anywhere in the [west](location)
 - I am looking for [asian fusion](cuisine) food
 - I am looking a restaurant in [294328](location)
+- get me list of top resturants for [mexican](cuisine) cuisine in [bengulur](location) and send over email to [devendra.satram@gmail.com](to_email_id)
 - in [Gurgaon](location)
 - Oh, sorry, in [Italy](location)
 - in [delhi](location)
@@ -95,6 +96,10 @@
 - find restaurants in [chennai](location)
 - [American](cuisine:american)
 - [tirupati](location)
+- get me top [mexican](cuisine) restaurants in [banglore](location:Bengaluru) by mail to [devendra.satram@gmail.com](to_email_id)
+- search for [american](cuisine) restaurants in [banglore](location:Bengaluru) and send the result to [devendra.satram@gmail.com](to_email_id)
+- search hotels
+- [south indian](cuisine) in [chennai](location)
 
 ## intent:sendemail
 - get me results on email [devendra.satram@gmail.com](to_email_id)
@@ -106,6 +111,10 @@
 - [devendra.satram@gmail.com](to_email_id)
 - [foodie.restaurants.bot@gmail.com](to_email_id)
 - [morethan_700](price_range)
+- [lessthan_300](price_range)
+- [between_300_to_700](price_range)
+- [morethan_700](price_range)
+- [devendra.satram@gmail.com](to_email_id)
 
 ## synonym:4
 - four
@@ -162,6 +171,9 @@
 
 ## regex:pincode
 - [0-9]{6}
+
+## regex:to_email_id
+- (^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)
 
 ## lookup:location
   data/tire_1_2_cities_list.txt

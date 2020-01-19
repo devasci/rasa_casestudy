@@ -80,12 +80,14 @@ class ActionSearchRestaurants(Action):
             filtered_results = self.filterRestaurantsForBot(d, price_range_selected)
             
             if len(filtered_results) == 0:
-                response = 'There are no restaurants available in the given price range, \nplease choose a higher price range.'
+                response = 'There are no restaurants available in the given price range, \nplease choose a different price range.'
+                dispatcher.utter_message(response)
+                return [SlotSet('change_price_range', 'Yes')]
             elif len(filtered_results) >= 5:
                 response = 'Found \n'+'\n'.join(filtered_results[0:5])
 
         dispatcher.utter_message(response)
-        return [SlotSet('location', loc)]
+        return [SlotSet('change_price_range', 'No')]
 
 class ActionCheckCity(Action):
 
@@ -113,7 +115,7 @@ class ActionCheckCity(Action):
         loc = tracker.get_slot('location')
 
         isOperatedinCity = False
-        if loc in self.operating_cities:
+        if loc.lower() in self.operating_cities:
             isOperatedinCity = True
 
         # print(f'city: {loc} is present in operating cities list')
@@ -131,6 +133,8 @@ class ActionSendMail(Action):
 
     def run(self, dispatcher, tracker, domain):
         to_email_id = tracker.get_slot('to_email_id')
+        cuisine = tracker.get_slot('cuisine')
+        location = tracker.get_slot('location')
 
         context = ssl.create_default_context()
         with smtplib.SMTP(self.smtp_server, self.port) as server:
@@ -139,7 +143,7 @@ class ActionSendMail(Action):
             server.ehlo()  # Can be omitted
             server.login(self.sender_email, self.password)
             global email_body_data
-            subject = 'Subject: Foodie: your restaurant search results\n'
-            server.sendmail(self.sender_email, to_email_id, subject+email_body_data)
+            subject = 'Subject: Foodie: {0} restaurants in {1}\n'.format(cuisine, location)
+            server.sendmail(self.sender_email, [to_email_id], subject+email_body_data)
         
         return
