@@ -38,6 +38,8 @@
 - hello!
 - Hello!
 - hello there
+- Hola
+- Hey
 
 ## intent:restaurant_search
 - i'm looking for a place to eat
@@ -159,11 +161,22 @@
 - I'm hungry. Looking out for some good [mexican](cuisine) restaurants in [coimbatore](location)
 - I'm hungry. Looking out for some good [chinese](cuisine) restaurants in [chandigarh](location)
 - good [chinese](cuisine) restaurants in [chandigarh](location)
-- [lessthan_300](price_range)
 - find good [chinese](cuisine) restaurants in [chennai](location)
-- [devendra.satram@gmail.com](to_email_id)
 - find good [mexican](cuisine) restaurants in [chennai](location)
-- [between_300_to_700](price_range)
+- please get me list of top [chinese](cuisine) restaurants
+- I'm hungry. Looking out for some good restaurants
+- Can you suggest some good restaurants in [Rishikesh](location:rishikesh)
+- goos reataurants
+- restaurants
+- [kurnool](location)
+- find restaurants in [amritsar](location)
+- in [amritsar](location)
+- in [chunai](location)
+- find list of top [mexican](cuisine) restaurants in [manglore](location:mangalore) where price is [more than 700](price_range:morethan_700) rs
+- find top [mexican](cuisine) restaurants in budget around [600 rs](price_range:between_300_to_700) for 2 in [bengluru](location:Benguluru)
+- [benguluru](location:Benguluru)
+- looking out for some good restaurants in [madurai](location)
+- [morethan_700](price_range)
 
 ## intent:sendemail
 - get me results on email [devendra.satram@gmail.com](to_email_id)
@@ -196,6 +209,10 @@
 - bengalore
 - benglore
 
+## synonym:Benguluru
+- bengluru
+- benguluru
+
 ## synonym:Delhi
 - New Delhi
 
@@ -212,6 +229,7 @@
 ## synonym:between_300_to_700
 - Rs. 300 to 700
 - less than 700
+- 600 rs
 
 ## synonym:chinese
 - chines
@@ -246,6 +264,7 @@
 ## synonym:morethan_700
 - More than 700
 - above 1000
+- more than 700
 
 ## synonym:mumbai
 - Mumbai

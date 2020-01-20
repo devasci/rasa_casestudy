@@ -1,18 +1,4 @@
-## common_story_1
-* greet
-    - utter_greet
-* restaurant_search
-    - utter_ask_location
-    - action_listen
-    - action_check_city
-    - utter_ask_cuisine
-    - action_listen
-    - utter_ask_pricerange
-    - action_listen
-    - action_search_restaurants
-* affirm
-    - utter_goodbye
-    - action_restart
+
 ## interactive_story_1
 * greet
     - utter_greet
@@ -39,6 +25,224 @@
     - action_send_email
     - utter_goodbye
     - action_restart
+
+## interactive_story_1
+* greet
+    - utter_greet
+* restaurant_search
+    - utter_ask_location
+* restaurant_search{"location": "agra"}
+    - slot{"location": "agra"}
+    - action_check_city
+    - slot{"is_operated_in_city": true}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "chinese"}
+    - slot{"cuisine": "chinese"}
+    - utter_ask_pricerange
+* restaurant_search{"price_range": "between_300_to_700"}
+    - slot{"price_range": "between_300_to_700"}
+    - action_search_restaurants
+    - slot{"location": "agra"}
+    - utter_ask_restults_on_email
+* sendemail{"is_email_requested": "Yes"}
+    - slot{"is_email_requested": "Yes"}
+    - utter_ask_emailid
+* sendemail{"to_email_id": "devendra.satram@gmail.com"}
+    - slot{"to_email_id": "devendra.satram@gmail.com"}
+    - action_send_email
+    - utter_goodbye
+    - action_restart
+
+## interactive_story_1
+* greet
+    - utter_greet
+* restaurant_search
+    - utter_ask_location
+* restaurant_search{"location": "agra"}
+    - slot{"location": "agra"}
+    - action_check_city
+    - slot{"is_operated_in_city": true}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "chinese"}
+    - slot{"cuisine": "chinese"}
+    - utter_ask_pricerange
+* restaurant_search{"price_range": "lessthan_300"}
+    - slot{"price_range": "lessthan_300"}
+    - action_search_restaurants
+    - slot{"location": "agra"}
+    - utter_ask_restults_on_email
+* sendemail{"is_email_requested": "Yes"}
+    - slot{"is_email_requested": "Yes"}
+    - utter_ask_emailid
+* sendemail{"to_email_id": "devendra.satram@gmail.com"}
+    - slot{"to_email_id": "devendra.satram@gmail.com"}
+    - action_send_email
+    - utter_goodbye
+    - action_restart
+
+## interactive_story_1
+* greet
+    - utter_greet
+* restaurant_search
+    - utter_ask_location
+* restaurant_search{"location": "agra"}
+    - slot{"location": "agra"}
+    - action_check_city
+    - slot{"is_operated_in_city": true}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "american"}
+    - slot{"cuisine": "american"}
+    - utter_ask_pricerange
+* restaurant_search{"price_range": "lessthan_300"}
+    - slot{"price_range": "lessthan_300"}
+    - action_search_restaurants
+    - slot{"location": "agra"}
+    - utter_ask_restults_on_email
+* sendemail{"is_email_requested": "Yes"}
+    - slot{"is_email_requested": "Yes"}
+    - utter_ask_emailid
+* sendemail{"to_email_id": "devendra.satram@gmail.com"}
+    - slot{"to_email_id": "devendra.satram@gmail.com"}
+    - action_send_email
+    - utter_goodbye
+    - action_restart
+
+## interactive_story_1
+* greet
+    - utter_greet
+* restaurant_search
+    - utter_ask_location
+* restaurant_search{"location": "agra"}
+    - slot{"location": "agra"}
+    - action_check_city
+    - slot{"is_operated_in_city": true}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "mexican"}
+    - slot{"cuisine": "mexican"}
+    - utter_ask_pricerange
+* restaurant_search{"price_range": "lessthan_300"}
+    - slot{"price_range": "lessthan_300"}
+    - action_search_restaurants
+    - slot{"location": "agra"}
+    - utter_ask_restults_on_email
+* sendemail{"is_email_requested": "Yes"}
+    - slot{"is_email_requested": "Yes"}
+    - utter_ask_emailid
+* sendemail{"to_email_id": "devendra.satram@gmail.com"}
+    - slot{"to_email_id": "devendra.satram@gmail.com"}
+    - action_send_email
+    - utter_goodbye
+    - action_restart
+
+## interactive_story_1
+* greet
+    - utter_greet
+* restaurant_search
+    - utter_ask_location
+* restaurant_search{"location": "agra"}
+    - slot{"location": "agra"}
+    - action_check_city
+    - slot{"is_operated_in_city": true}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "italian"}
+    - slot{"cuisine": "italian"}
+    - utter_ask_pricerange
+* restaurant_search{"price_range": "lessthan_300"}
+    - slot{"price_range": "lessthan_300"}
+    - action_search_restaurants
+    - slot{"location": "agra"}
+    - utter_ask_restults_on_email
+* sendemail{"is_email_requested": "Yes"}
+    - slot{"is_email_requested": "Yes"}
+    - utter_ask_emailid
+* sendemail{"to_email_id": "devendra.satram@gmail.com"}
+    - slot{"to_email_id": "devendra.satram@gmail.com"}
+    - action_send_email
+    - utter_goodbye
+    - action_restart
+
+## interactive_story_1
+* greet
+    - utter_greet
+* restaurant_search
+    - utter_ask_location
+* restaurant_search{"location": "agra"}
+    - slot{"location": "agra"}
+    - action_check_city
+    - slot{"is_operated_in_city": true}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "south indian"}
+    - slot{"cuisine": "south indian"}
+    - utter_ask_pricerange
+* restaurant_search{"price_range": "lessthan_300"}
+    - slot{"price_range": "lessthan_300"}
+    - action_search_restaurants
+    - slot{"location": "agra"}
+    - utter_ask_restults_on_email
+* sendemail{"is_email_requested": "Yes"}
+    - slot{"is_email_requested": "Yes"}
+    - utter_ask_emailid
+* sendemail{"to_email_id": "devendra.satram@gmail.com"}
+    - slot{"to_email_id": "devendra.satram@gmail.com"}
+    - action_send_email
+    - utter_goodbye
+    - action_restart
+
+## interactive_story_1
+* greet
+    - utter_greet
+* restaurant_search
+    - utter_ask_location
+* restaurant_search{"location": "agra"}
+    - slot{"location": "agra"}
+    - action_check_city
+    - slot{"is_operated_in_city": true}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "north indian"}
+    - slot{"cuisine": "north indian"}
+    - utter_ask_pricerange
+* restaurant_search{"price_range": "lessthan_300"}
+    - slot{"price_range": "lessthan_300"}
+    - action_search_restaurants
+    - slot{"location": "agra"}
+    - utter_ask_restults_on_email
+* sendemail{"is_email_requested": "Yes"}
+    - slot{"is_email_requested": "Yes"}
+    - utter_ask_emailid
+* sendemail{"to_email_id": "devendra.satram@gmail.com"}
+    - slot{"to_email_id": "devendra.satram@gmail.com"}
+    - action_send_email
+    - utter_goodbye
+    - action_restart
+
+## interactive_story_1
+* greet
+    - utter_greet
+* restaurant_search
+    - utter_ask_location
+* restaurant_search{"location": "agra"}
+    - slot{"location": "agra"}
+    - action_check_city
+    - slot{"is_operated_in_city": true}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "north indian"}
+    - slot{"cuisine": "north indian"}
+    - utter_ask_pricerange
+* restaurant_search{"price_range": "between_300_to_700"}
+    - slot{"price_range": "between_300_to_700"}
+    - action_search_restaurants
+    - slot{"location": "agra"}
+    - utter_ask_restults_on_email
+* sendemail{"is_email_requested": "Yes"}
+    - slot{"is_email_requested": "Yes"}
+    - utter_ask_emailid
+* sendemail{"to_email_id": "devendra.satram@gmail.com"}
+    - slot{"to_email_id": "devendra.satram@gmail.com"}
+    - action_send_email
+    - utter_goodbye
+    - action_restart
+
+
 ## interactive_story_1
 * greet
     - utter_greet
@@ -56,7 +260,7 @@
     - slot{"price_range": "morethan_700"}
     - action_search_restaurants
     - utter_ask_restults_on_email
-* restaurant_search{"is_email_requested": "Yes"}
+* sendemail{"is_email_requested": "Yes"}
     - slot{"is_email_requested": "Yes"}
     - utter_ask_emailid
 * sendemail{"to_email_id": "devendra.satram@gmail.com"}
@@ -299,7 +503,7 @@
 * sendemail{"is_email_requested": "Yes"}
     - slot{"is_email_requested": "Yes"}
     - utter_ask_emailid
-* restaurant_search{"to_email_id": "devendra.satram@gmail.com"}
+* sendemail{"to_email_id": "devendra.satram@gmail.com"}
     - slot{"to_email_id": "devendra.satram@gmail.com"}
     - action_send_email
     - utter_goodbye
@@ -322,7 +526,7 @@
 * sendemail{"is_email_requested": "Yes"}
     - slot{"is_email_requested": "Yes"}
     - utter_ask_emailid
-* restaurant_search{"to_email_id": "devendra.satram@gmail.com"}
+* sendemail{"to_email_id": "devendra.satram@gmail.com"}
     - slot{"to_email_id": "devendra.satram@gmail.com"}
     - action_send_email
     - utter_goodbye
@@ -346,7 +550,7 @@
 * sendemail{"is_email_requested": "Yes"}
     - slot{"is_email_requested": "Yes"}
     - utter_ask_emailid
-* restaurant_search{"to_email_id": "devendra.satram@gmail.com"}
+* sendemail{"to_email_id": "devendra.satram@gmail.com"}
     - slot{"to_email_id": "devendra.satram@gmail.com"}
     - action_send_email
     - utter_goodbye
@@ -379,7 +583,7 @@
 * sendemail{"is_email_requested": "Yes"}
     - slot{"is_email_requested": "Yes"}
     - utter_ask_emailid
-* restaurant_search{"to_email_id": "devendra.satram@gmail.com"}
+* sendemail{"to_email_id": "devendra.satram@gmail.com"}
     - slot{"to_email_id": "devendra.satram@gmail.com"}
     - action_send_email
     - utter_goodbye
@@ -400,7 +604,7 @@
 * sendemail{"is_email_requested": "Yes"}
     - slot{"is_email_requested": "Yes"}
     - utter_ask_emailid
-* restaurant_search{"to_email_id": "devendra.satram@gmail.com"}
+* sendemail{"to_email_id": "devendra.satram@gmail.com"}
     - slot{"to_email_id": "devendra.satram@gmail.com"}
     - action_send_email
     - utter_goodbye
@@ -423,7 +627,7 @@
 * sendemail{"is_email_requested": "Yes"}
     - slot{"is_email_requested": "Yes"}
     - utter_ask_emailid
-* restaurant_search{"to_email_id": "devendra.satram@gmail.com"}
+* sendemail{"to_email_id": "devendra.satram@gmail.com"}
     - slot{"to_email_id": "devendra.satram@gmail.com"}
     - action_send_email
     - utter_goodbye
@@ -529,7 +733,7 @@
 * sendemail{"is_email_requested": "Yes"}
     - slot{"is_email_requested": "Yes"}
     - utter_ask_emailid
-* restaurant_search{"to_email_id": "gmail.com"}
+* sendemail{"to_email_id": "gmail.com"}
     - slot{"to_email_id": "gmail.com"}
     - action_send_email
     - slot{"is_email_valid": false}
@@ -537,7 +741,7 @@
 * restaurant_search
     - utter_invalid_mail_id
     - utter_ask_emailid
-* restaurant_search{"to_email_id": "devendra4sci@gmail.com"}
+* sendemail{"to_email_id": "devendra4sci@gmail.com"}
     - slot{"to_email_id": "devendra4sci@gmail.com"}
     - action_send_email
     - utter_goodbye
@@ -595,7 +799,7 @@
 * sendemail{"is_email_requested": "Yes"}
     - slot{"is_email_requested": "Yes"}
     - utter_ask_emailid
-* restaurant_search{"to_email_id": "devendra.satram@gmail.com"}
+* sendemail{"to_email_id": "devendra.satram@gmail.com"}
     - slot{"to_email_id": "devendra.satram@gmail.com"}
     - action_send_email
     - utter_mail_sent
@@ -641,7 +845,7 @@
 * sendemail{"is_email_requested": "Yes"}
     - slot{"is_email_requested": "Yes"}
     - utter_ask_emailid
-* restaurant_search{"to_email_id": "devendra.satram@gmail.com"}
+* sendemail{"to_email_id": "devendra.satram@gmail.com"}
     - slot{"to_email_id": "devendra.satram@gmail.com"}
     - action_send_email
     - utter_mail_sent
@@ -711,7 +915,7 @@
 * sendemail{"is_email_requested": "Yes"}
     - slot{"is_email_requested": "Yes"}
     - utter_ask_emailid
-* restaurant_search{"to_email_id": "devendra.satram@gmail.com"}
+* sendemail{"to_email_id": "devendra.satram@gmail.com"}
     - slot{"to_email_id": "devendra.satram@gmail.com"}
     - action_send_email
     - utter_goodbye
@@ -1002,6 +1206,18 @@
     - utter_goodbye
     - action_restart
 
+## nomail_001
+* sendemail{"is_email_requested": "No"}
+    - slot{"is_email_requested": "No"}
+    - utter_goodbye
+    - action_restart
+
+## nomail_002
+* sendemail{"is_email_requested": "No"}
+    - slot{"is_email_requested": "No"}
+    - utter_goodbye
+    - action_restart
+
 ## interactive_story_1
 * greet
     - utter_greet
@@ -1040,7 +1256,7 @@
 * restaurant_search{"change_price_range": "Yes"}
     - slot{"change_price_range": "Yes"}
     - utter_ask_emailid
-* restaurant_search{"to_email_id": "devendra.satram@gmail.com"}
+* sendemail{"to_email_id": "devendra.satram@gmail.com"}
     - slot{"to_email_id": "devendra.satram@gmail.com"}
     - utter_mail_sent
     - action_restart
@@ -1079,4 +1295,498 @@
 * restaurant_search{"change_price_range": "No"}
     - slot{"change_price_range": "No"}
     - utter_goodbye
+    - action_restart
+
+## interactive_story_1
+* greet
+    - utter_greet
+* restaurant_search{"cuisine": "chinese"}
+    - slot{"cuisine": "chinese"}
+    - utter_ask_location
+* restaurant_search{"location": "Bengaluru"}
+    - slot{"location": "Bengaluru"}
+    - action_check_city
+    - slot{"is_operated_in_city": true}
+    - slot{"is_valid_city_name": true}
+    - utter_ask_pricerange
+* restaurant_search{"price_range": "morethan_700"}
+    - slot{"price_range": "morethan_700"}
+    - action_search_restaurants
+    - slot{"change_price_range": "No"}
+    - utter_ask_restults_on_email
+* sendemail{"is_email_requested": "No"}
+    - slot{"is_email_requested": "No"}
+    - utter_goodbye
+    - action_restart
+
+## interactive_story_1
+* greet
+    - utter_greet
+* restaurant_search
+    - utter_ask_location
+* restaurant_search{"location": "Bengaluru"}
+    - slot{"location": "Bengaluru"}
+    - action_check_city
+    - slot{"is_operated_in_city": true}
+    - slot{"is_valid_city_name": true}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "South Indian"}
+    - slot{"cuisine": "South Indian"}
+    - utter_ask_pricerange
+* restaurant_search{"price_range": "between_300_to_700"}
+    - slot{"price_range": "between_300_to_700"}
+    - action_search_restaurants
+    - slot{"change_price_range": "Yes"}
+    - utter_ask_change_pricerange
+* restaurant_search{"change_price_range": "Yes"}
+    - slot{"change_price_range": "Yes"}
+    - utter_ask_pricerange
+* restaurant_search{"price_range": "morethan_700"}
+    - slot{"price_range": "morethan_700"}
+    - action_search_restaurants
+    - slot{"change_price_range": "No"}
+    - utter_ask_restults_on_email
+* sendemail{"is_email_requested": "Yes"}
+    - slot{"is_email_requested": "Yes"}
+    - utter_ask_emailid
+* sendemail{"to_email_id": "devendra.satram@gmail.com"}
+    - slot{"to_email_id": "devendra.satram@gmail.com"}
+    - action_send_email
+    - utter_mail_sent
+    - action_restart
+
+## interactive_story_1
+* greet
+    - utter_greet
+* restaurant_search{"location": "rishikesh"}
+    - slot{"location": "rishikesh"}
+    - action_check_city
+    - slot{"is_operated_in_city": false}
+    - slot{"is_valid_city_name": true}
+    - utter_not_operating_city
+    - action_restart
+
+## interactive_story_1
+* greet
+    - utter_greet
+* restaurant_search
+    - utter_ask_location
+* restaurant_search{"location": "Bengaluru"}
+    - slot{"location": "Bengaluru"}
+    - action_check_city
+    - slot{"is_operated_in_city": true}
+    - slot{"is_valid_city_name": true}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "South Indian"}
+    - slot{"cuisine": "South Indian"}
+    - utter_ask_pricerange
+* restaurant_search{"price_range": "morethan_700"}
+    - slot{"price_range": "morethan_700"}
+    - action_search_restaurants
+    - slot{"change_price_range": "No"}
+    - utter_ask_restults_on_email
+* sendemail{"is_email_requested": "Yes"}
+    - slot{"is_email_requested": "Yes"}
+    - utter_ask_emailid
+* sendemail{"to_email_id": "devendra.satram@gmail.com"}
+    - slot{"to_email_id": "devendra.satram@gmail.com"}
+    - action_send_email
+    - utter_mail_sent
+    - action_restart
+
+## interactive_story_1
+* greet
+    - utter_greet
+* restaurant_search
+    - utter_ask_location
+* restaurant_search{"location": "Bengaluru"}
+    - slot{"location": "Bengaluru"}
+    - action_check_city
+    - slot{"is_operated_in_city": true}
+    - slot{"is_valid_city_name": true}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "North Indian"}
+    - slot{"cuisine": "North Indian"}
+    - utter_ask_pricerange
+* restaurant_search{"price_range": "morethan_700"}
+    - slot{"price_range": "morethan_700"}
+    - action_search_restaurants
+    - slot{"change_price_range": "No"}
+    - utter_ask_restults_on_email
+* sendemail{"is_email_requested": "Yes"}
+    - slot{"is_email_requested": "Yes"}
+    - utter_ask_emailid
+* sendemail{"to_email_id": "devendra.satram@gmail.com"}
+    - slot{"to_email_id": "devendra.satram@gmail.com"}
+    - action_send_email
+    - utter_mail_sent
+    - action_restart
+
+## interactive_story_1
+* greet
+    - utter_greet
+* restaurant_search
+    - utter_ask_location
+* restaurant_search{"location": "Bengaluru"}
+    - slot{"location": "Bengaluru"}
+    - action_check_city
+    - slot{"is_operated_in_city": true}
+    - slot{"is_valid_city_name": true}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "North Indian"}
+    - slot{"cuisine": "North Indian"}
+    - utter_ask_pricerange
+* restaurant_search{"price_range": "morethan_700"}
+    - slot{"price_range": "morethan_700"}
+    - action_search_restaurants
+    - slot{"change_price_range": "No"}
+    - utter_ask_restults_on_email
+* sendemail{"is_email_requested": "Yes"}
+    - slot{"is_email_requested": "Yes"}
+    - utter_ask_emailid
+* sendemail{"to_email_id": "devendra.satram@gmail.com"}
+    - slot{"to_email_id": "devendra.satram@gmail.com"}
+    - action_send_email
+    - utter_mail_sent
+    - action_restart
+
+## interactive_story_2
+    - utter_ask_location
+* restaurant_search{"location": "Bengaluru"}
+    - slot{"location": "Bengaluru"}
+    - action_check_city
+    - slot{"is_operated_in_city": true}
+    - slot{"is_valid_city_name": true}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "American"}
+    - slot{"cuisine": "American"}
+    - utter_ask_pricerange
+* restaurant_search{"price_range": "morethan_700"}
+    - slot{"price_range": "morethan_700"}
+    - action_search_restaurants
+    - slot{"change_price_range": "No"}
+    - utter_ask_restults_on_email
+* sendemail{"is_email_requested": "Yes"}
+    - slot{"is_email_requested": "Yes"}
+    - utter_ask_emailid
+* sendemail{"to_email_id": "devendra.satram@gmail.com"}
+    - slot{"to_email_id": "devendra.satram@gmail.com"}
+    - action_send_email
+    - utter_mail_sent
+    - action_restart
+
+## interactive_story_3
+    - utter_ask_location
+* restaurant_search{"location": "kurnool"}
+    - slot{"location": "kurnool"}
+    - action_check_city
+    - slot{"is_operated_in_city": true}
+    - slot{"is_valid_city_name": true}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "Chinese"}
+    - slot{"cuisine": "Chinese"}
+    - utter_ask_pricerange
+* restaurant_search{"price_range": "lessthan_300"}
+    - slot{"price_range": "lessthan_300"}
+    - action_search_restaurants
+    - slot{"change_price_range": "No"}
+    - utter_ask_restults_on_email
+* sendemail{"is_email_requested": "Yes"}
+    - slot{"is_email_requested": "Yes"}
+    - utter_ask_emailid
+* sendemail{"to_email_id": "devendra.satram@gmail.com"}
+    - slot{"to_email_id": "devendra.satram@gmail.com"}
+    - action_send_email
+    - utter_goodbye
+    - action_restart
+
+## interactive_story_1
+* greet
+    - utter_greet
+* restaurant_search{"location": "amritsar"}
+    - slot{"location": "amritsar"}
+    - action_check_city
+    - slot{"is_operated_in_city": true}
+    - slot{"is_valid_city_name": true}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "Chinese"}
+    - slot{"cuisine": "Chinese"}
+    - utter_ask_pricerange
+* restaurant_search{"price_range": "morethan_700"}
+    - slot{"price_range": "morethan_700"}
+    - action_search_restaurants
+    - slot{"change_price_range": "Yes"}
+    - action_restart
+
+## interactive_story_2
+    - utter_ask_location
+* restaurant_search{"location": "amritsar"}
+    - slot{"location": "amritsar"}
+    - action_check_city
+    - slot{"is_operated_in_city": true}
+    - slot{"is_valid_city_name": true}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "North Indian"}
+    - slot{"cuisine": "North Indian"}
+    - utter_ask_pricerange
+* restaurant_search{"price_range": "morethan_700"}
+    - slot{"price_range": "morethan_700"}
+    - action_search_restaurants
+    - slot{"change_price_range": "Yes"}
+    - action_restart
+
+## interactive_story_1
+* greet
+    - utter_greet
+* restaurant_search{"location": "chennai"}
+    - slot{"location": "chennai"}
+    - action_check_city
+    - slot{"is_operated_in_city": true}
+    - slot{"is_valid_city_name": true}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "Chinese"}
+    - slot{"cuisine": "Chinese"}
+    - utter_ask_pricerange
+* restaurant_search{"price_range": "morethan_700"}
+    - slot{"price_range": "morethan_700"}
+    - action_search_restaurants
+    - slot{"change_price_range": "No"}
+    - utter_ask_restults_on_email
+* sendemail{"is_email_requested": "Yes"}
+    - slot{"is_email_requested": "Yes"}
+    - utter_ask_emailid
+* sendemail{"to_email_id": "devendra.satram@gmail.com"}
+    - slot{"to_email_id": "devendra.satram@gmail.com"}
+    - action_send_email
+    - utter_mail_sent
+    - action_restart
+
+## interactive_story_2
+* greet
+    - utter_greet
+* restaurant_search{"location": "indore"}
+    - slot{"location": "indore"}
+    - action_check_city
+    - slot{"is_operated_in_city": true}
+    - slot{"is_valid_city_name": true}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "Chinese"}
+    - slot{"cuisine": "Chinese"}
+    - utter_ask_pricerange
+* restaurant_search{"price_range": "morethan_700"}
+    - slot{"price_range": "morethan_700"}
+    - action_search_restaurants
+    - slot{"change_price_range": "No"}
+    - utter_ask_restults_on_email
+* sendemail{"is_email_requested": "Yes"}
+    - slot{"is_email_requested": "Yes"}
+    - utter_ask_emailid
+* sendemail{"to_email_id": "devendra.satram@gmail.com"}
+    - slot{"to_email_id": "devendra.satram@gmail.com"}
+    - action_send_email
+    - utter_mail_sent
+    - action_restart
+
+## interactive_story_3
+* greet
+    - utter_greet
+* restaurant_search{"location": "kanpur"}
+    - slot{"location": "kanpur"}
+    - action_check_city
+    - slot{"is_operated_in_city": true}
+    - slot{"is_valid_city_name": true}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "Chinese"}
+    - slot{"cuisine": "Chinese"}
+    - utter_ask_pricerange
+* restaurant_search{"price_range": "between_300_to_700"}
+    - slot{"price_range": "between_300_to_700"}
+    - action_search_restaurants
+    - slot{"change_price_range": "No"}
+    - utter_ask_restults_on_email
+* sendemail{"is_email_requested": "Yes"}
+    - slot{"is_email_requested": "Yes"}
+    - utter_ask_emailid
+* sendemail{"to_email_id": "devendra.satram@gmail.com"}
+    - slot{"to_email_id": "devendra.satram@gmail.com"}
+    - action_send_email
+    - utter_mail_sent
+    - action_restart
+
+## interactive_story_4
+* greet
+    - utter_greet
+* restaurant_search{"location": "pondicherry"}
+    - slot{"location": "pondicherry"}
+    - action_check_city
+    - slot{"is_operated_in_city": true}
+    - slot{"is_valid_city_name": true}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "American"}
+    - slot{"cuisine": "American"}
+    - utter_ask_pricerange
+* restaurant_search{"price_range": "lessthan_300"}
+    - slot{"price_range": "lessthan_300"}
+    - action_search_restaurants
+    - slot{"change_price_range": "No"}
+    - utter_ask_restults_on_email
+* sendemail{"is_email_requested": "Yes"}
+    - slot{"is_email_requested": "Yes"}
+    - utter_ask_emailid
+* sendemail{"to_email_id": "devendra.satram@gmail.com"}
+    - slot{"to_email_id": "devendra.satram@gmail.com"}
+    - action_send_email
+    - utter_mail_sent
+    - action_restart
+
+## interactive_story_4
+* greet
+    - utter_greet
+* restaurant_search{"location": "pondicherry"}
+    - slot{"location": "pondicherry"}
+    - action_check_city
+    - slot{"is_operated_in_city": true}
+    - slot{"is_valid_city_name": true}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "American"}
+    - slot{"cuisine": "American"}
+    - utter_ask_pricerange
+* restaurant_search{"price_range": "between_300_to_700"}
+    - slot{"price_range": "between_300_to_700"}
+    - action_search_restaurants
+    - slot{"change_price_range": "No"}
+    - utter_ask_restults_on_email
+* sendemail{"is_email_requested": "Yes"}
+    - slot{"is_email_requested": "Yes"}
+    - utter_ask_emailid
+* sendemail{"to_email_id": "devendra.satram@gmail.com"}
+    - slot{"to_email_id": "devendra.satram@gmail.com"}
+    - action_send_email
+    - utter_mail_sent
+    - action_restart
+
+## interactive_story_5
+* greet
+    - utter_greet
+* restaurant_search{"location": "pondicherry"}
+    - slot{"location": "pondicherry"}
+    - action_check_city
+    - slot{"is_operated_in_city": true}
+    - slot{"is_valid_city_name": true}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "American"}
+    - slot{"cuisine": "American"}
+    - utter_ask_pricerange
+* restaurant_search{"price_range": "morethan_700"}
+    - slot{"price_range": "morethan_700"}
+    - action_search_restaurants
+    - slot{"change_price_range": "No"}
+    - utter_ask_restults_on_email
+* sendemail{"is_email_requested": "Yes"}
+    - slot{"is_email_requested": "Yes"}
+    - utter_ask_emailid
+* sendemail{"to_email_id": "devendra.satram@gmail.com"}
+    - slot{"to_email_id": "devendra.satram@gmail.com"}
+    - action_send_email
+    - utter_mail_sent
+    - action_restart
+## interactive_story_1
+* greet
+    - utter_greet
+* restaurant_search
+    - utter_ask_location
+* restaurant_search{"location": "chunai"}
+    - slot{"location": "chunai"}
+    - action_check_city
+    - slot{"is_valid_city_name": false}
+    - slot{"is_operated_in_city": false}
+* restaurant_search{"location": "chennai"}
+    - slot{"location": "chennai"}
+    - action_check_city
+    - slot{"is_operated_in_city": true}
+    - slot{"is_valid_city_name": true}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "Chinese"}
+    - slot{"cuisine": "Chinese"}
+    - utter_ask_pricerange
+* restaurant_search{"price_range": "morethan_700"}
+    - slot{"price_range": "morethan_700"}
+    - action_search_restaurants
+    - slot{"change_price_range": "No"}
+    - utter_ask_restults_on_email
+* sendemail{"is_email_requested": "No"}
+    - slot{"is_email_requested": "No"}
+    - utter_goodbye
+    - action_restart
+
+## interactive_story_1
+* greet
+    - utter_greet
+* restaurant_search{"cuisine": "mexican", "location": "mangalore", "price_range": "morethan_700"}
+    - slot{"cuisine": "mexican"}
+    - slot{"location": "mangalore"}
+    - slot{"price_range": "morethan_700"}
+    - action_check_city
+    - slot{"is_operated_in_city": true}
+    - slot{"is_valid_city_name": true}
+    - action_search_restaurants
+    - slot{"change_price_range": "No"}
+    - utter_ask_restults_on_email
+* sendemail{"is_email_requested": "No"}
+    - slot{"is_email_requested": "No"}
+    - utter_goodbye
+    - action_restart
+
+## interactive_story_1
+* greet
+    - utter_greet
+* restaurant_search{"cuisine": "mexican", "price_range": "between_300_to_700", "location": "Benguluru"}
+    - slot{"cuisine": "mexican"}
+    - slot{"location": "Benguluru"}
+    - slot{"price_range": "between_300_to_700"}
+    - action_check_city
+    - slot{"is_valid_city_name": false}
+    - slot{"is_operated_in_city": false}
+* restaurant_search{"location": "Benguluru"}
+    - slot{"location": "Benguluru"}
+    - action_check_city
+    - slot{"is_valid_city_name": false}
+    - slot{"is_operated_in_city": false}
+* restaurant_search{"location": "Bengaluru"}
+    - slot{"location": "Bengaluru"}
+    - action_check_city
+    - slot{"is_operated_in_city": true}
+    - slot{"is_valid_city_name": true}
+    - action_search_restaurants
+    - slot{"change_price_range": "Yes"}
+    - utter_ask_change_pricerange
+* restaurant_search{"change_price_range": "No"}
+    - slot{"change_price_range": "No"}
+    - utter_goodbye
+    - action_restart
+
+## interactive_story_1
+* greet
+    - utter_greet
+* restaurant_search{"location": "madurai"}
+    - slot{"location": "madurai"}
+    - action_check_city
+    - slot{"is_operated_in_city": true}
+    - slot{"is_valid_city_name": true}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "Italian"}
+    - slot{"cuisine": "Italian"}
+    - utter_ask_pricerange
+* restaurant_search{"price_range": "morethan_700"}
+    - slot{"price_range": "morethan_700"}
+    - action_search_restaurants
+    - slot{"change_price_range": "Yes"}
+    - utter_ask_change_pricerange
+* restaurant_search{"change_price_range": "Yes"}
+    - slot{"change_price_range": "Yes"}
+    - utter_ask_pricerange
+* restaurant_search{"price_range": "morethan_700"}
+    - slot{"price_range": "morethan_700"}
+    - action_search_restaurants
+    - slot{"change_price_range": "Yes"}
     - action_restart

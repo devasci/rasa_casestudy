@@ -150,6 +150,10 @@ class ActionSendMail(Action):
         cuisine = tracker.get_slot('cuisine')
         location = tracker.get_slot('location')
 
+        if to_email_id == None:
+            dispatcher.utter_message('No email id given.')
+            return [SlotSet('is_email_valid', False)]
+
         email_match = re.search('([\w.-]+)@([\w.-]+)', to_email_id)
         if email_match == None:
             dispatcher.utter_message('mail id is invalid, please enter valid mail id.')
