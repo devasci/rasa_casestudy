@@ -40,6 +40,7 @@
 - hello there
 - Hola
 - Hey
+- Hello
 
 ## intent:restaurant_search
 - i'm looking for a place to eat
@@ -176,7 +177,12 @@
 - find top [mexican](cuisine) restaurants in budget around [600 rs](price_range:between_300_to_700) for 2 in [bengluru](location:Benguluru)
 - [benguluru](location:Benguluru)
 - looking out for some good restaurants in [madurai](location)
-- [morethan_700](price_range)
+- I'm hungry. looking out for some good restaurants
+- can you suggest some good restaurants in [kurnool](location)
+- [gao](location)
+- in [mumbai](location)
+- looking out for some good [chinese](cuisine) restaurants in [noida](location)
+- [between_300_to_700](price_range)
 
 ## intent:sendemail
 - get me results on email [devendra.satram@gmail.com](to_email_id)

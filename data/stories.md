@@ -1790,3 +1790,184 @@
     - action_search_restaurants
     - slot{"change_price_range": "Yes"}
     - action_restart
+
+## interactive_story_1
+* greet
+    - utter_greet
+* restaurant_search
+    - utter_ask_location
+* restaurant_search{"location": "Bengaluru"}
+    - slot{"location": "Bengaluru"}
+    - action_check_city
+    - slot{"is_operated_in_city": true}
+    - slot{"is_valid_city_name": true}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "Italian"}
+    - slot{"cuisine": "Italian"}
+    - utter_ask_pricerange
+* restaurant_search{"price_range": "morethan_700"}
+    - slot{"price_range": "morethan_700"}
+    - action_search_restaurants
+    - slot{"change_price_range": "No"}
+    - utter_ask_restults_on_email
+* sendemail{"is_email_requested": "Yes"}
+    - slot{"is_email_requested": "Yes"}
+    - utter_ask_emailid
+* restaurant_search{"to_email_id": "devendra.satram@gmail.com"}
+    - slot{"to_email_id": "devendra.satram@gmail.com"}
+    - action_send_email
+    - utter_mail_sent
+    - action_restart
+
+## interactive_story_1
+* greet
+    - utter_greet
+* restaurant_search{"location": "kurnool"}
+    - slot{"location": "kurnool"}
+    - action_check_city
+    - slot{"is_operated_in_city": true}
+    - slot{"is_valid_city_name": true}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "South Indian"}
+    - slot{"cuisine": "South Indian"}
+    - utter_ask_pricerange
+* restaurant_search{"price_range": "morethan_700"}
+    - slot{"price_range": "morethan_700"}
+    - action_search_restaurants
+    - slot{"change_price_range": "Yes"}
+    - utter_ask_change_pricerange
+* restaurant_search{"change_price_range": "Yes"}
+    - slot{"change_price_range": "Yes"}
+    - utter_ask_pricerange
+* restaurant_search{"price_range": "between_300_to_700"}
+    - slot{"price_range": "between_300_to_700"}
+    - action_search_restaurants
+    - slot{"change_price_range": "No"}
+    - utter_ask_restults_on_email
+* sendemail{"is_email_requested": "Yes"}
+    - slot{"is_email_requested": "Yes"}
+    - utter_ask_emailid
+* restaurant_search{"to_email_id": "devendra.satram@gmail.com"}
+    - slot{"to_email_id": "devendra.satram@gmail.com"}
+    - action_send_email
+    - utter_mail_sent
+    - action_restart
+
+## interactive_story_1
+* greet
+    - utter_greet
+* restaurant_search
+    - utter_ask_location
+* restaurant_search{"location": "mubaim"}
+    - slot{"location": "mubaim"}
+    - action_check_city
+    - slot{"is_valid_city_name": false}
+    - slot{"is_operated_in_city": false}
+* restaurant_search{"location": "mumbai"}
+    - slot{"location": "mumbai"}
+    - action_check_city
+    - slot{"is_operated_in_city": true}
+    - slot{"is_valid_city_name": true}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "American"}
+    - slot{"cuisine": "American"}
+    - utter_ask_pricerange
+* restaurant_search{"price_range": "between_300_to_700"}
+    - slot{"price_range": "between_300_to_700"}
+    - action_search_restaurants
+    - slot{"change_price_range": "No"}
+    - utter_ask_restults_on_email
+* sendemail{"is_email_requested": "Yes"}
+    - slot{"is_email_requested": "Yes"}
+    - utter_ask_emailid
+* restaurant_search{"to_email_id": "devendra.satram@gmail.com"}
+    - slot{"to_email_id": "devendra.satram@gmail.com"}
+    - action_send_email
+    - utter_mail_sent
+    - action_restart
+
+## interactive_story_1
+* greet
+    - utter_greet
+* restaurant_search
+    - utter_ask_location
+* restaurant_search{"location": "gao"}
+    - slot{"location": "gao"}
+    - action_check_city
+    - slot{"is_valid_city_name": false}
+    - slot{"is_operated_in_city": false}
+* restaurant_search{"location": "goa"}
+    - slot{"location": "goa"}
+    - action_check_city
+    - slot{"is_operated_in_city": true}
+    - slot{"is_valid_city_name": true}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "American"}
+    - slot{"cuisine": "American"}
+    - utter_ask_pricerange
+* restaurant_search{"price_range": "between_300_to_700"}
+    - slot{"price_range": "between_300_to_700"}
+    - action_search_restaurants
+    - slot{"change_price_range": "No"}
+    - utter_ask_restults_on_email
+* sendemail{"is_email_requested": "Yes"}
+    - slot{"is_email_requested": "Yes"}
+    - utter_ask_emailid
+* restaurant_search{"to_email_id": "devendra.satram@gmail.com"}
+    - slot{"to_email_id": "devendra.satram@gmail.com"}
+    - action_send_email
+    - utter_mail_sent
+    - action_restart
+
+## interactive_story_1
+* greet
+    - utter_greet
+* restaurant_search
+    - utter_ask_location
+* restaurant_search{"location": "mubaim"}
+    - slot{"location": "mubaim"}
+    - action_check_city
+    - slot{"is_valid_city_name": false}
+    - slot{"is_operated_in_city": false}
+* restaurant_search{"location": "mumbai"}
+    - slot{"location": "mumbai"}
+    - action_check_city
+    - slot{"is_operated_in_city": true}
+    - slot{"is_valid_city_name": true}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "Italian"}
+    - slot{"cuisine": "Italian"}
+    - utter_ask_pricerange
+* restaurant_search{"price_range": "between_300_to_700"}
+    - slot{"price_range": "between_300_to_700"}
+    - action_search_restaurants
+    - slot{"change_price_range": "No"}
+    - utter_ask_restults_on_email
+* sendemail{"is_email_requested": "Yes"}
+    - slot{"is_email_requested": "Yes"}
+    - utter_ask_emailid
+* restaurant_search{"to_email_id": "devendra.satram@gmail.com"}
+    - slot{"to_email_id": "devendra.satram@gmail.com"}
+    - action_send_email
+    - utter_mail_sent
+    - action_restart
+
+## interactive_story_1
+* greet
+    - utter_greet
+* restaurant_search{"cuisine": "chinese", "location": "noida"}
+    - slot{"cuisine": "chinese"}
+    - slot{"location": "noida"}
+    - action_check_city
+    - slot{"is_operated_in_city": true}
+    - slot{"is_valid_city_name": true}
+    - utter_ask_pricerange
+* restaurant_search{"price_range": "between_300_to_700"}
+    - slot{"price_range": "between_300_to_700"}
+    - action_search_restaurants
+    - slot{"change_price_range": "No"}
+    - utter_ask_restults_on_email
+* sendemail{"is_email_requested": "No"}
+    - slot{"is_email_requested": "No"}
+    - utter_goodbye
+    - action_restart

@@ -30,9 +30,9 @@ entities:
 - price_range
 - to_email_id
 intents:
-- greet
-- restaurant_search
 - sendemail
+- restaurant_search
+- greet
 - out_of_context
 - affirm
 - goodbye
