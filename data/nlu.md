@@ -12,6 +12,7 @@
 - sounds really good
 - thanks
 - ok, thankyou
+- ok, thanks
 
 ## intent:goodbye
 - bye
@@ -29,9 +30,12 @@
 - hey there
 - hello
 - hi
+- yo
 - good morning
 - good evening
 - dear sir
+- hola
+- hello!
 
 ## intent:restaurant_search
 - i'm looking for a place to eat
@@ -78,8 +82,7 @@
 - [American](cuisine)
 - [Mexican](cuisine)
 - [Italian](cuisine)
-- [Chinese](cuisine:chinese)
-- [chinese](cuisine)
+- [Chinese](cuisine)
 - [Lithuania](location)
 - [guntur](location)
 - [Lesser than 300](price_range:lessthan_300)
@@ -116,8 +119,28 @@
 - restaurants to have tasty [italian](cuisine) and [chinese](cuisine) food
 - [pannuruteja@gmail.com](to_email_id)
 - Restaurant with different varieties of food [before 300 Rupees](price_range:lessthan_300)
-- [delhi](location)
-- [Italian](cuisine:italian)
+- find restaurants in [delhi](location)
+- [devendra.satram@gmail.com](to_email_id)
+- find [chinese](cuisine) restaurants in [mumbai](location) and cost for two [above 1000](price_range:morethan_700)
+- find [mexican](cuisine) restaurants in [agra](location)
+- find restaurants with price range [less than 300](price_range:lessthan_300)
+- list of [italian](cuisine) restaurants in [chennai](location) where price is [less than 700](price_range:between_300_to_700)
+- devendra   satram   @  [gmail.com](to_email_id)
+- devendra   mail id:
+- [devendra4sci@gmail.com](to_email_id)
+- look for restaurants
+- I’m hungry. Looking out for some good restaurants
+- [bengaluru](location:Bengaluru)
+- can you suggest some good restaurants in [Rishikesh](location:rishikesh)
+- show me some in [allahabad](location)
+- can you suggest some good restaurants in [kolkota](location)
+- can you suggest some good restaurants in [kolkota](location:kolkata)
+- [<300](price_range:lessthan_300)
+- i'm hungry. Looking out for some good restaurants
+- in [mubaim](location)
+- in [mubaim](location)
+- in [Mumbai](location:mumbai)
+- [morethan_700](price_range)
 
 ## intent:sendemail
 - get me results on email [devendra.satram@gmail.com](to_email_id)
@@ -129,6 +152,7 @@
 - [devendra.satram@gmail.com](to_email_id)
 - [foodie.restaurants.bot@gmail.com](to_email_id)
 - [pannuruteja@gmail.com](to_email_id)
+- [yes](is_email_requested:Yes). please
 
 ## intent:out_of_context
 - first best park in [delhi](location)
@@ -140,10 +164,10 @@
 - banglore
 - bangalore
 - Bangalore
+- bengaluru
 - bangulore
 - banguluru
 - bangulur
-- bengaluru
 - bengulur
 - bengalore
 - benglore
@@ -156,12 +180,14 @@
 
 ## synonym:Yes
 - send via email
+- yes
 
 ## synonym:american
 - American
 
 ## synonym:between_300_to_700
 - Rs. 300 to 700
+- less than 700
 
 ## synonym:chinese
 - chines
@@ -174,15 +200,28 @@
 ## synonym:italian
 - Italian
 
+## synonym:kolkata
+- kolkota
+
 ## synonym:lessthan_300
 - Lesser than 300
 - cheapest
+- before 300 Rupees
+- less than 300
+- <300
 
 ## synonym:mexican
 - Mexican
 
 ## synonym:morethan_700
 - More than 700
+- above 1000
+
+## synonym:north indian
+- Nouth Indian
+
+## synonym:rishikesh
+- Rishikesh
 
 ## synonym:south indian
 - South Indian

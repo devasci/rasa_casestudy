@@ -7,16 +7,17 @@ from rasa_sdk.events import SlotSet
 import zomatopy
 import json
 import smtplib, ssl
+import re
 
 email_body_data = ''
 
 class ActionSearchRestaurants(Action):
-    cuisines_codes = {25: 'Chinese',
-                      73: 'Mexican',
-                      55: 'Italian',
-                      1: 'American',
-                      85: 'South Indian',
-                      50: 'North Indian'}
+    cuisines_codes = {25: 'chinese',
+                      73: 'mexican',
+                      55: 'italian',
+                      1: 'american',
+                      85: 'south indian',
+                      50: 'north indian'}
     
     price_ranges = { 'lessthan_300' : (0,299), 'between_300_to_700': (300, 700), 'morethan_700': (701, 100000)}
 
@@ -71,7 +72,7 @@ class ActionSearchRestaurants(Action):
         price_range_selected = tracker.get_slot('price_range')
 
         results = zomato.restaurant_search(
-            "", lat, lon, str(self.cuisines_codes.get(cuisine)), 10)
+            "", lat, lon, str(self.cuisines_codes.get(cuisine.lower())), 10)
         d = json.loads(results)
         response = ""
         if d['results_found'] == 0:
@@ -83,7 +84,7 @@ class ActionSearchRestaurants(Action):
                 response = 'There are no restaurants available in the given price range, \nplease choose a different price range.'
                 dispatcher.utter_message(response)
                 return [SlotSet('change_price_range', 'Yes')]
-            elif len(filtered_results) >= 5:
+            elif len(filtered_results) > 0:
                 response = 'Found \n'+'\n'.join(filtered_results[0:5])
 
         dispatcher.utter_message(response)
@@ -114,12 +115,24 @@ class ActionCheckCity(Action):
     def run(self, dispatcher, tracker, domain):
         loc = tracker.get_slot('location')
 
-        isOperatedinCity = False
         if loc.lower() in self.operating_cities:
-            isOperatedinCity = True
+            return [SlotSet('is_operated_in_city', True), SlotSet('is_valid_city_name', True)]
+        
+        config = {"user_key": "1d4135a3fffd11b1ad7587b5e1471c69"}
+        zomato = zomatopy.initialize_app(config)
+
+        try:
+            city_id = zomato.get_city_ID(loc)
+        except Exception as e:
+            print(f'### {e}')
+            if e.__str__() == 'InvalidCityId' or e.__str__() == 'invalid_city_name':
+                dispatcher.utter_message('Sorry, didn’t find any such location. Can you please tell again?')
+
+            return [SlotSet('is_valid_city_name', False), SlotSet('is_operated_in_city', False)]
 
         # print(f'city: {loc} is present in operating cities list')
-        return [SlotSet('is_operated_in_city', isOperatedinCity)]
+        print('default case')
+        return [SlotSet('is_operated_in_city', False), SlotSet('is_valid_city_name', True)]
 
 class ActionSendMail(Action):
 
@@ -135,6 +148,13 @@ class ActionSendMail(Action):
         to_email_id = tracker.get_slot('to_email_id')
         cuisine = tracker.get_slot('cuisine')
         location = tracker.get_slot('location')
+
+        email_match = re.search('([\w.-]+)@([\w.-]+)', to_email_id)
+        if email_match == None:
+            dispatcher.utter_message('mail id is invalid, please enter valid mail id.')
+            return [SlotSet('is_email_valid', False)]
+        
+        SlotSet('is_email_valid', True)
 
         context = ssl.create_default_context()
         with smtplib.SMTP(self.smtp_server, self.port) as server:

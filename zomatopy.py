@@ -1,5 +1,6 @@
 import requests
 import ast
+import json
 
 base_url = "https://developers.zomato.com/api/v2.1/"
 
@@ -43,7 +44,9 @@ class Zomato:
         city_name = '%20'.join(city_name)
         headers = {'Accept': 'application/json', 'user-key': self.user_key}
         r = (requests.get(base_url + "cities?q=" + city_name, headers=headers).content).decode("utf-8")
-        a = ast.literal_eval(r)
+        # r = r.replace('"user_has_addresses": true', '"user_has_addresses": True')
+        # a = ast.literal_eval(r)
+        a = json.loads(r)
 
         self.is_key_invalid(a)
         self.is_rate_exceeded(a)

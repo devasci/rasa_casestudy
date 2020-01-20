@@ -13,6 +13,8 @@ actions:
 - utter_default
 - utter_goodbye
 - utter_greet
+- utter_invalid_mail_id
+- utter_mail_sent
 - utter_no_results_in_pricerange
 - utter_not_greeted_u_greet_sure
 - utter_not_operating_city
@@ -21,17 +23,18 @@ entities:
 - change_price_range
 - cuisine
 - is_email_requested
+- is_email_valid
 - location
 - people
 - price_range
 - to_email_id
 intents:
-- restaurant_search
 - sendemail
+- restaurant_search
+- greet
 - affirm
 - goodbye
 - out_of_context
-- greet
 - stop
 session_config:
   carry_over_slots_to_new_session: true
@@ -43,7 +46,11 @@ slots:
     type: text
   is_email_requested:
     type: bool
+  is_email_valid:
+    type: bool
   is_operated_in_city:
+    type: bool
+  is_valid_city_name:
     type: bool
   location:
     type: text
@@ -61,17 +68,17 @@ templates:
     text: do you like to look for restaurants in other price ranges?
   utter_ask_cuisine:
   - buttons:
-    - payload: Chinese
+    - payload: /restaurant_search{"cuisine":"Chinese"}
       title: Chinese
-    - payload: Mexican
+    - payload: /restaurant_search{"cuisine":"Mexican"}
       title: Mexican
-    - payload: Italian
+    - payload: /restaurant_search{"cuisine":"Italian"}
       title: Italian
-    - payload: American
+    - payload: /restaurant_search{"cuisine":"American"}
       title: American
-    - payload: South Indian
+    - payload: /restaurant_search{"cuisine":"South Indian"}
       title: South Indian
-    - payload: North Indian
+    - payload: /restaurant_search{"cuisine":"North Indian"}
       title: North Indian
     text: What kind of cuisine would you prefer?
   utter_ask_emailid:
@@ -103,15 +110,21 @@ templates:
   utter_goodbye:
   - text: goodbye :)
   - text: Bye-bye
+  - text: Thank you
   utter_greet:
   - text: hey there! How may i help you
   - text: Hi, How can I help you!
   - text: Hey, How is it going. How May I help you Today
+  utter_invalid_mail_id:
+  - text: e-mail id is invalid, please enter valid mail id.
+  utter_mail_sent:
+  - text: Sent
+  - text: Sent. Bon Appetit!
   utter_no_results_in_pricerange:
   - text: There are not restaurants available in the chosen price range
   utter_not_greeted_u_greet_sure:
-  - text: Hi there, welcome.  looking for restaurants in {location}
+  - text: Hi there, welcome. sure, let me check you query...
   utter_not_operating_city:
-  - text: Sorry, we are not operating in {location} yet
+  - text: Sorry, we are not operating in that area yet
   utter_outofcontext:
   - text: Please ask me restaurant search queries only.
