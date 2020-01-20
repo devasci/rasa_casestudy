@@ -30,7 +30,7 @@ class ActionSearchRestaurants(Action):
             price_range_id = 'lessthan_300'
 
         minPrice, maxPrice = self.price_ranges[price_range_id]
-        result_text_format = '{0} in "{1}" has been rated {2}'
+        result_text_format = '{0}. {1} in "{2}" has been rated {3}'
         final_results = []
         results_for_email = []
         cntr = 0
@@ -42,7 +42,7 @@ class ActionSearchRestaurants(Action):
             if cost_for_two >= minPrice and cost_for_two <= maxPrice:
                 cntr += 1
                 final_results.append(
-                        result_text_format.format(e['restaurant']['name'],
+                        result_text_format.format(cntr,e['restaurant']['name'],
                                                   e['restaurant']['location']['address'],
                                                   e['restaurant']['user_rating']['aggregate_rating']
                                                 #   e['restaurant']['user_rating']['rating_text'],
@@ -85,7 +85,7 @@ class ActionSearchRestaurants(Action):
                 dispatcher.utter_message(response)
                 return [SlotSet('change_price_range', 'Yes')]
             elif len(filtered_results) > 0:
-                response = 'Found \n'+'\n'.join(filtered_results[0:5])
+                response = 'Showing you top rated restaurants: \n'+'\n'.join(filtered_results[0:5])
 
         dispatcher.utter_message(response)
         return [SlotSet('change_price_range', 'No')]
@@ -96,7 +96,7 @@ class ActionCheckCity(Action):
                         'ahmedabad', 'pune', 'agra', 'ajmer', 'aligarh', 'amravati', 'amritsar',
                         'asansol', 'aurangabad', 'bareilly', 'belgaum', 'bhavnagar', 'bhiwandi',
                         'bhopal', 'bhubaneswar', 'bikaner', 'bilaspur', 'bokaro steel city',
-                        'chandigarh', 'coimbatore nagpur', 'cuttack', 'dehradun', 'dhanbad', 'bhilai',
+                        'chandigarh', 'coimbatore', 'nagpur', 'cuttack', 'dehradun', 'dhanbad', 'bhilai',
                         'durgapur', 'erode', 'faridabad', 'firozabad', 'ghaziabad', 'gorakhpur', 'gulbarga',
                         'guntur', 'gwalior', 'gurgaon', 'guwahati', 'hamirpur', 'hubli–dharwad', 'indore',
                         'jabalpur', 'jaipur', 'jalandhar', 'jammu', 'jamnagar', 'jamshedpur', 'jhansi',
@@ -115,6 +115,9 @@ class ActionCheckCity(Action):
     def run(self, dispatcher, tracker, domain):
         loc = tracker.get_slot('location')
 
+        if loc == None:
+            return [SlotSet('is_operated_in_city', False), SlotSet('is_valid_city_name', True)]
+
         if loc.lower() in self.operating_cities:
             return [SlotSet('is_operated_in_city', True), SlotSet('is_valid_city_name', True)]
         
@@ -124,14 +127,12 @@ class ActionCheckCity(Action):
         try:
             city_id = zomato.get_city_ID(loc)
         except Exception as e:
-            print(f'### {e}')
             if e.__str__() == 'InvalidCityId' or e.__str__() == 'invalid_city_name':
                 dispatcher.utter_message('Sorry, didn’t find any such location. Can you please tell again?')
 
             return [SlotSet('is_valid_city_name', False), SlotSet('is_operated_in_city', False)]
 
         # print(f'city: {loc} is present in operating cities list')
-        print('default case')
         return [SlotSet('is_operated_in_city', False), SlotSet('is_valid_city_name', True)]
 
 class ActionSendMail(Action):

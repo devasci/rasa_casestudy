@@ -7,6 +7,7 @@ actions:
 - utter_ask_emailid
 - utter_ask_howcanhelp
 - utter_ask_location
+- utter_ask_location_city_name
 - utter_ask_pricerange
 - utter_ask_restults_on_email
 - utter_debug_ok
@@ -29,12 +30,12 @@ entities:
 - price_range
 - to_email_id
 intents:
-- sendemail
-- restaurant_search
 - greet
+- restaurant_search
+- sendemail
+- out_of_context
 - affirm
 - goodbye
-- out_of_context
 - stop
 session_config:
   carry_over_slots_to_new_session: true
@@ -87,6 +88,8 @@ templates:
   - text: how can I help you?
   utter_ask_location:
   - text: In what location?
+  utter_ask_location_city_name:
+  - text: Please tell me the name of your city
   utter_ask_pricerange:
   - buttons:
     - payload: lessthan_300

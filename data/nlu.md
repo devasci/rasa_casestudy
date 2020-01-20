@@ -36,6 +36,8 @@
 - dear sir
 - hola
 - hello!
+- Hello!
+- hello there
 
 ## intent:restaurant_search
 - i'm looking for a place to eat
@@ -138,9 +140,30 @@
 - [<300](price_range:lessthan_300)
 - i'm hungry. Looking out for some good restaurants
 - in [mubaim](location)
-- in [mubaim](location)
 - in [Mumbai](location:mumbai)
-- [morethan_700](price_range)
+- [aurangabad](location)
+- list [mexican](cuisine) restaurants in [rajkot](location)
+- [goa](location)
+- [cochin](location:kochi)
+- can you tell me best [northindian](cuisine:north indian) restaurants in my place
+- in my location
+- my location
+- oh ok, it's [coorg](location)
+- please send top [mexican](cuisine) hotels list to my email id: [devendra.satram@gmail.com](to_email_id)
+- [manglore](location:mangalore)
+- get me top 3 [italian](cuisine) hotels in [bangalore](location:Bengaluru)
+- find restaurants in [goa](location)
+- find restaurants near [goa](location)
+- I'm hungry.  Looking out for some good [chinese](cuisine) restaurants in [chandigarh](location)
+- me hungry, find restaurants in [coimbatore](location)
+- I'm hungry. Looking out for some good [mexican](cuisine) restaurants in [coimbatore](location)
+- I'm hungry. Looking out for some good [chinese](cuisine) restaurants in [chandigarh](location)
+- good [chinese](cuisine) restaurants in [chandigarh](location)
+- [lessthan_300](price_range)
+- find good [chinese](cuisine) restaurants in [chennai](location)
+- [devendra.satram@gmail.com](to_email_id)
+- find good [mexican](cuisine) restaurants in [chennai](location)
+- [between_300_to_700](price_range)
 
 ## intent:sendemail
 - get me results on email [devendra.satram@gmail.com](to_email_id)
@@ -156,6 +179,7 @@
 
 ## intent:out_of_context
 - first best park in [delhi](location)
+- i'm hungry
 
 ## synonym:4
 - four
@@ -200,6 +224,9 @@
 ## synonym:italian
 - Italian
 
+## synonym:kochi
+- cochin
+
 ## synonym:kolkata
 - kolkota
 
@@ -210,6 +237,9 @@
 - less than 300
 - <300
 
+## synonym:mangalore
+- manglore
+
 ## synonym:mexican
 - Mexican
 
@@ -217,7 +247,11 @@
 - More than 700
 - above 1000
 
+## synonym:mumbai
+- Mumbai
+
 ## synonym:north indian
+- northindian
 - Nouth Indian
 
 ## synonym:rishikesh
