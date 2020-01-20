@@ -1,5 +1,15 @@
-language: en
-pipeline: pretrained_embeddings_spacy
+language: "en"
+
+pipeline:
+- name: "SpacyNLP"
+- name: "SpacyTokenizer"
+- name: "SpacyFeaturizer"
+  return_sequence: True
+- name: "RegexFeaturizer"
+- name: "CRFEntityExtractor"
+- name: "EntitySynonymMapper"
+- name: "SklearnIntentClassifier"
+
 policies:
 - name: MemoizationPolicy
 - name: KerasPolicy
