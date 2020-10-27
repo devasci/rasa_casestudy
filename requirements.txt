@@ -41,7 +41,7 @@ constantly==15.1.0
 convertapi==1.1.0
 coverage==4.5.4
 crochet==1.10.0
-cryptography==2.7
+cryptography==3.2
 cycler==0.10.0
 cymem==2.0.3
 decorator==4.4.0
